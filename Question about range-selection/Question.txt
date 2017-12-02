@@ -1,0 +1,23 @@
+How can I let the user select ranges of an Excel workbook in Python?
+
+
+For an application I am building, I need to let the User select parts of an Excel range several times (after having let the User select the total combination of ranges as a starting point.)
+
+I have looked in the documentation of packages like openpyxl, xlrd and xlutils, but I could not find this functionality in there.
+
+After that, I tried calling excel's InputBox directly from Python (with type=8, to indicate that I want the address of the chosen ranges), but I always received the contents of the first Cell of the first Range of the chosen Areas in stead of the Address of the Ranges (or the address of the Areas).
+
+I ended up using an excel macro (in which I call excel's InputBox), and that works as desired (in Windows).
+However, writing your own functions to re-create basic functionality feels like re-inventing the wheel.
+Besides, my program will only work in Windows ...
+
+Question:
+Is there a better way in Python to let the user select parts of one or more ranges of an excel file?
+
+
+Example code notes:
+- The code example assumes that all files been put into the C\temp directory.
+- To select more than one range in excel, use Ctrl-Click-Drag.
+- In the first step, you can simply choose a combination of 2 or 3 ranges of the example file. A real-life user would probably select 'Officieel 2'!$A$3:$B$7,'Officieel 2'!$D$3:$E$7,'Officieel 2'!$G$3:$H$7,'Officieel 2'!$J$3:$K$7,'Officieel 2'!$A$10:$B$14,'Officieel 2'!$D$10:$E$14,'Officieel 2'!$G$10:$H$14,'Officieel 2'!$J$10:$K$14,'Officieel 2'!$A$17:$B$21,'Officieel 2'!$D$17:$E$21,'Officieel 2'!$A$26:$B$30,'Officieel 2'!$D$26:$E$30,'Officieel 2'!$H$32:$I$40,'Officieel 2'!$A$35:$B$39,'Officieel 2'!$D$35:$E$39,'Officieel 2'!$A$42:$B$45,'Officieel 2'!$D$42:$E$45
+
+
